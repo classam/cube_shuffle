@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="{{subtitle}}">
+
+        <title>{{title}}</title>
+        <link href="{{favicon}}" rel="icon" type="image/png">
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+        <h1>{{title}}</h1>
+        <p>Cube Drone is a web-comic and
+        <a href='https://www.youtube.com/channel/UC8KxkYgafaJnzyWz1pq_glg'>video series</a> about code
+        and the coders who code it.</p>
+
+        <div class='entries'>
+            {% for entry in entries %}
+                <div class='entry'>
+                    {{entry.summary}}
+                </div>
+            {% endfor %}
+        </div>
+
+
+    </body>
+</html>
