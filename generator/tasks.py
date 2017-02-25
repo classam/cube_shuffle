@@ -12,6 +12,11 @@ import invoke
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from invoke import task
 
+PAPERTRAIL_HOST = "logs3.papertrailapp.com"
+PAPERTRAIL_PORT = "14163"
+FEED_URL = 'https://threepanel.com/t/cube-drone/18.rss';
+PATH = '.'
+
 
 @task(optional=['feed_url', 'path'])
 def generate(ctx, feed_url=None, path=None):
@@ -20,10 +25,10 @@ def generate(ctx, feed_url=None, path=None):
     """
 
     if not feed_url:
-        feed_url = 'https://threepanel.com/t/cube-drone/18.rss';
+        feed_url = FEED_URL
 
     if not path:
-        path = '.'
+        path = PATH
 
     r = feedparser.parse(feed_url)
     feed = r.feed

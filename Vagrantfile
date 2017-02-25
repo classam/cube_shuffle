@@ -67,6 +67,12 @@ Vagrant.configure(2) do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
      sudo apt-get update
-     sudo apt-get install -y nginx
+     sudo apt-get install -y nginx python3-pip vim ack-grep
+
+     sudo pip3 install --upgrade pip
+     sudo pip3 install -r /home/vagrant/generator/requirements.txt
+
+     echo "Generate NGINX files"
+     echo "Place NGINX config files"
   SHELL
 end
