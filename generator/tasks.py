@@ -233,7 +233,7 @@ def generate_nginx_config(ctx, path=None):
     nginx_opts['papertrail_host'] = PAPERTRAIL_HOST
     nginx_opts['papertrail_port'] = PAPERTRAIL_PORT
     nginx_opts['rewrite_rules'] = REWRITE_RULES
-    nginx_opts['sendfile'] = 'off'
+    nginx_opts['sendfile'] = 'on'
 
     nginx_filename = os.path.join(path, 'nginx.conf')
     nginx_site_filename = os.path.join(path, 'default')
