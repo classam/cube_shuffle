@@ -209,7 +209,7 @@ def generate(ctx, feed_url=None, path=None):
     feed['entries'] = r.entries
     feed['year'] = datetime.datetime.now().year
 
-    print(json.dumps(feed, indent=4))
+    #print(json.dumps(feed, indent=4))
 
     style_opts = {}
     style_opts['bg_pattern_url'] = random_pattern(pattern_type='dark')
