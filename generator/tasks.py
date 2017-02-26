@@ -208,6 +208,7 @@ def generate(ctx, feed_url=None, path=None):
     feed['subtitle'] = "Comics about Code"
     feed['entries'] = r.entries
     feed['year'] = datetime.datetime.now().year
+    feed['time'] = datetime.datetime.now().isoformat()
 
     #print(json.dumps(feed, indent=4))
 
