@@ -7,23 +7,63 @@
 
         <title>{{title}}</title>
         <link href="{{favicon}}" rel="icon" type="image/png">
+
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700" rel="stylesheet">
+
         <link rel="stylesheet" href="style.css">
 
     </head>
     <body>
-        <h1>{{title}}</h1>
-        <p>Cube Drone is a web-comic and
-        <a href='https://www.youtube.com/channel/UC8KxkYgafaJnzyWz1pq_glg'>video series</a> about code
-        and the coders who code it.</p>
+    <div class='content'>
+
+        <section>
+            <div class='logo'>
+            <video playsinline autoplay muted  id='bgvid'>
+                <!--<source src='' type='video/webm'>-->
+                <source src='https://s3-us-west-2.amazonaws.com/cube-assets/flex.mp4' type='video/mp4'>
+            </video>
+            </div>
+
+            <p>Cube Drone is a web-comic and
+            <a href='https://www.youtube.com/channel/UC8KxkYgafaJnzyWz1pq_glg'>video series</a> about code
+            and the coders who code it.</p>
+            <p>You might also be interested in <a href="https://threepanel.com/t/cube-drone/18/2">starting at the first comic</a>,
+                subscribing to the <a href="rss.xml">RSS Feed</a>, or contributing to the <a href="https://www.patreon.com/cubedrone">&quot;Make a Damn Comic&quot; fund</a>.
+        </section>
+
 
         <div class='entries'>
             {% for entry in entries %}
                 <section class='entry'>
+                    <h2 class='date'><a href='{{entry.link}}'>&gt;&gt;&gt; {{entry.published}}</a></h2>
                     {{entry.summary}}
                 </section>
+                {% if loop.first %}
+                <section class='twits'>
+                    <a class="twitter-timeline" data-width="600" data-height="300" data-tweet-limit="5" href="https://twitter.com/classam">Tweets by classam</a>
+                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </section>
+
+                {% endif %}
+                {% if loop.last %}
+                <section class='keep_reading'>
+                    <p>
+                        Oh, yeah, you've hit the end of the page, but did you know that these are only
+                        the last 25 comics? I've made <a href='{{entry.link}}'>hundreds more</a>
+                        if you want to <a href='{{entry.link}}'>keep reading...</a>
+                    </p>
+                </section>
+                {% endif %}
             {% endfor %}
         </div>
 
+        <section class='footer'>
+            <p>Cube Drone &copy; {{year}}</p>
+            <p><small>this website powered by <a href='https://github.com/classam/cube_shuffle'>Cube Shuffle</a><small></p>
+        </section>
 
+
+
+    </div>
     </body>
 </html>

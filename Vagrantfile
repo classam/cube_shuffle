@@ -66,13 +66,31 @@ Vagrant.configure(2) do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
+
+     export ROOT_DIRECTORY="/home/vagrant/generator"
+
      sudo apt-get update
      sudo apt-get install -y nginx python3-pip vim ack-grep
 
      sudo pip3 install --upgrade pip
-     sudo pip3 install -r /home/vagrant/generator/requirements.txt
+     sudo pip3 install -r $ROOT_DIRECTORY/requirements.txt
+
+     invoke --root=$ROOT_DIRECTORY all --path=$ROOT_DIRECTORY
+
+     echo "Create symlinks to website"
+     sudo rm -rf /var/www/html
+     sudo ln -s $ROOT_DIRECTORY/generated /var/www/html
 
      echo "Generate NGINX files"
      echo "Place NGINX config files"
+     sudo rm /etc/nginx/nginx.conf
+     sudo ln -s $ROOT_DIRECTORY/generated/nginx.conf /etc/nginx/nginx.conf
+
+     sudo rm /etc/nginx/sites-available/default
+     sudo rm /etc/nginx/sites-enabled/default
+     sudo ln -s $ROOT_DIRECTORY/generated/default /etc/nginx/sites-enabled/default
+
+     echo "Reboot NGINX"
+     sudo systemctl restart nginx
   SHELL
 end

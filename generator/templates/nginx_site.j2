@@ -11,11 +11,9 @@ server {
         server_name _;
 
         {% for location, target in rewrite_rules|dictsort %}
-        location /{{rewrite_rule}} {
-            return 301 {{target}}
+        location /{{location}} {
+            return 301 {{target}};
         }
-
-
         {% endfor %}
 
 

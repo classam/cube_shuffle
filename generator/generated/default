@@ -1,0 +1,237 @@
+
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        root /var/www/html;
+
+        # Add index.php to the list if you are using PHP
+        index index.html;
+
+        server_name _;
+
+        
+        location /comics {
+            return 301 http://cube-drone.com;
+        }
+        
+        location /comics/archives {
+            return 301 http://cube-drone.com;
+        }
+        
+        location /comics/blog {
+            return 301 https://threepanel.com/c/category;
+        }
+        
+        location /comics/c/1000-kg {
+            return 301 https://threepanel.com/t/cube-drone/18/90;
+        }
+        
+        location /comics/c/a-funny-thing-happened-on-the-way-to-the-forum {
+            return 301 https://threepanel.com/t/cube-drone/18/134;
+        }
+        
+        location /comics/c/art-of-war {
+            return 301 https://threepanel.com/t/cube-drone/18/66;
+        }
+        
+        location /comics/c/bug-bestiary-the-beezlebug {
+            return 301 https://threepanel.com/t/cube-drone/18/151;
+        }
+        
+        location /comics/c/civilization {
+            return 301 https://threepanel.com/t/cube-drone-video-games/61/5;
+        }
+        
+        location /comics/c/cutting-the-gordian-knot {
+            return 301 https://threepanel.com/t/cube-drone/18/91;
+        }
+        
+        location /comics/c/cyberpunk-2015 {
+            return 301 https://threepanel.com/t/cube-drone/18/100;
+        }
+        
+        location /comics/c/cyberpunk-2016 {
+            return 301 https://threepanel.com/t/cube-drone/18/148;
+        }
+        
+        location /comics/c/dont-cry-cube-drone {
+            return 301 https://threepanel.com/t/secret-archives/62;
+        }
+        
+        location /comics/c/dont-prod-the-bear {
+            return 301 https://threepanel.com/t/cube-drone/18/130;
+        }
+        
+        location /comics/c/encapsulation {
+            return 301 https://threepanel.com/t/cube-drone/18/140;
+        }
+        
+        location /comics/c/fine-art {
+            return 301 https://threepanel.com/t/cube-drone/18/104;
+        }
+        
+        location /comics/c/going-feral {
+            return 301 https://threepanel.com/t/cube-drone/18/49;
+        }
+        
+        location /comics/c/holy-war {
+            return 301 https://threepanel.com/t/cube-drone/18/103;
+        }
+        
+        location /comics/c/how-it-feels-to-learn-javascript-in-2016 {
+            return 301 https://threepanel.com/t/cube-drone/18/152;
+        }
+        
+        location /comics/c/http-status-codes {
+            return 301 https://threepanel.com/t/cube-drone/18/150;
+        }
+        
+        location /comics/c/if-programming-languages-were-vehicles {
+            return 301 https://threepanel.com/t/cube-drone/18/39;
+        }
+        
+        location /comics/c/if-programming-languages-were-vehicles-ii {
+            return 301 https://threepanel.com/t/cube-drone/18/39;
+        }
+        
+        location /comics/c/if-programming-languages-were-vehicles-iii {
+            return 301 https://threepanel.com/t/cube-drone/18/39;
+        }
+        
+        location /comics/c/if-programming-languages-were-vehicles-iv {
+            return 301 https://threepanel.com/t/cube-drone/18/39;
+        }
+        
+        location /comics/c/ingenuity-of-sorts {
+            return 301 https://threepanel.com/t/cube-drone/18/20;
+        }
+        
+        location /comics/c/its-harder-in-a-distributed-environment {
+            return 301 https://threepanel.com/t/cube-drone/18/96;
+        }
+        
+        location /comics/c/keyboardio {
+            return 301 https://threepanel.com/t/cube-drone/18/107;
+        }
+        
+        location /comics/c/many-factor-authentication {
+            return 301 https://threepanel.com/t/cube-drone/18/156;
+        }
+        
+        location /comics/c/missing-the-point {
+            return 301 https://threepanel.com/t/cube-drone/18/108;
+        }
+        
+        location /comics/c/office-lan-party-planning {
+            return 301 https://threepanel.com/t/secret-archives/62;
+        }
+        
+        location /comics/c/openstack {
+            return 301 https://threepanel.com/t/cube-drone/18/61;
+        }
+        
+        location /comics/c/pep8-vs-v05 {
+            return 301 https://threepanel.com/t/cube-drone/18/114;
+        }
+        
+        location /comics/c/pickled-pythons {
+            return 301 https://threepanel.com/t/cube-drone/18/102;
+        }
+        
+        location /comics/c/poop-helmet {
+            return 301 https://threepanel.com/t/cube-drone/18/87;
+        }
+        
+        location /comics/c/professionalism {
+            return 301 https://threepanel.com/t/cube-drone/18/154;
+        }
+        
+        location /comics/c/progress {
+            return 301 https://threepanel.com/t/cube-drone/18/57;
+        }
+        
+        location /comics/c/relentless-persistence {
+            return 301 https://threepanel.com/t/cube-drone/18/70;
+        }
+        
+        location /comics/c/requirements-mambo {
+            return 301 https://threepanel.com/t/secret-archives/62;
+        }
+        
+        location /comics/c/rfc-2324 {
+            return 301 https://threepanel.com/t/cube-drone/18/97;
+        }
+        
+        location /comics/c/severance-package {
+            return 301 https://threepanel.com/t/cube-drone/18/129;
+        }
+        
+        location /comics/c/social-media-math {
+            return 301 https://threepanel.com/t/cube-drone/18/153;
+        }
+        
+        location /comics/c/some-like-it-hot {
+            return 301 https://threepanel.com/t/cube-drone/18/117;
+        }
+        
+        location /comics/c/sometimes-why {
+            return 301 https://threepanel.com/t/secret-archives/62;
+        }
+        
+        location /comics/c/still-crazy-after-all-these-years {
+            return 301 https://threepanel.com/t/cube-drone/18/75;
+        }
+        
+        location /comics/c/subscribe {
+            return 301 https://threepanel.com/;
+        }
+        
+        location /comics/c/the-blame-game {
+            return 301 https://threepanel.com/t/cube-drone/18/27;
+        }
+        
+        location /comics/c/the-only-way {
+            return 301 https://threepanel.com/t/secret-archives/62;
+        }
+        
+        location /comics/c/the-songs-of-programming {
+            return 301 https://threepanel.com/t/cube-drone/18/155;
+        }
+        
+        location /comics/c/tone-deaf {
+            return 301 https://threepanel.com/t/cube-drone/18/147;
+        }
+        
+        location /comics/c/tux-in-space {
+            return 301 https://threepanel.com/t/secret-archives/62;
+        }
+        
+        location /comics/c/up-up-and-away {
+            return 301 https://threepanel.com/t/secret-archives/62;
+        }
+        
+        location /comics/c/variations-on-a-theme {
+            return 301 https://threepanel.com/t/cube-drone/18/105;
+        }
+        
+        location /comics/c/version-sacrifice {
+            return 301 https://threepanel.com/t/cube-drone/18/71;
+        }
+        
+        location /comics/c/yaoi {
+            return 301 https://threepanel.com/t/cube-drone/18/128;
+        }
+        
+        location /rss.xml {
+            return 301 https://threepanel.com/t/cube-drone/18.rss;
+        }
+        
+
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
+}
